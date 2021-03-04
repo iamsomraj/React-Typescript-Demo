@@ -2,11 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Important Points 
+## Important Points
 
 1. In TS, when we are using props, we have to use interface to define what props Child expects to receive. This gives us type check in both the components: Parent and Child.
 
-2. 1st Way to declare a function component: 
+2. 1st Way to declare a function component:
 
 ```
 export const Child = ({ color }: ChildProps) => {
@@ -14,7 +14,8 @@ export const Child = ({ color }: ChildProps) => {
 };
 ```
 
-Downside of this approach: 
+Downside of this approach:
+
 - IT DOES NOT UNDERSTAND THAT THIS IS A REACT COMPONENT.
 
 - TS understands that this is a arrow function and it expects to receive arguements of type ChildProps. It also understands that this function returns some amount of JSX.
@@ -34,6 +35,13 @@ By this approach, TS understands the following things:
 - It will received props of the type ChildProps.
 - It will also have children prop.
 
+4. const [ var, setVar ] = useState(initialValue)
+
+- When the init value is a type of array, we have to mention the type like this:
+
+```
+  const [ array, setArray ] = useState<string[]>([]);
+```
 
 ## Available Scripts
 
