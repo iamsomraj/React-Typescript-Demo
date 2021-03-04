@@ -12,8 +12,8 @@ const UserSearch: React.FC = () => {
   const [user, setUser] = useState<{ name: string; age: number } | undefined>();
 
   const searchHandler = () => {
-    const foundUser = users.find(
-      (user) => user.name.toUpperCase() === name.toUpperCase()
+    const foundUser = users.find((user) =>
+      user.name.toUpperCase().includes(name.toUpperCase())
     );
     setUser(foundUser);
   };

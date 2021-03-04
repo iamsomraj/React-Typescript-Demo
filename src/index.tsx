@@ -4,6 +4,8 @@ import EventComponent from "./events/EventComponent";
 import Parent from "./props/Parent";
 import GuestList from "./state/GuestList";
 import UserSearch from "./state/UserSearch";
+import UserSearchCC from "./classes/UserSearchCC";
+import userProps from "./utils/userProps";
 
 const App = () => {
   return (
@@ -11,7 +13,8 @@ const App = () => {
       {/* <Parent /> */}
       {/* <GuestList /> */}
       {/* <UserSearch /> */}
-      <EventComponent />
+      {/* <EventComponent /> */}
+      <UserSearchCC users={userProps} />
     </div>
   );
 };
