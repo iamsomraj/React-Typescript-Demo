@@ -14,7 +14,10 @@ export const Child = ({ color }: ChildProps) => {
 };
 ```
 
-Downside of this approach: TS understands that this is a arrow function and it expects to receive arguements of type ChildProps. It also understands that this function returns some amount of JSX. IT DOES NOT UNDERSTAND THAT THIS IS A REACT COMPONENT.
+Downside of this approach: 
+- IT DOES NOT UNDERSTAND THAT THIS IS A REACT COMPONENT.
+
+- TS understands that this is a arrow function and it expects to receive arguements of type ChildProps. It also understands that this function returns some amount of JSX.
 
 3. 2nd Way to declare a function component:
 
@@ -29,7 +32,7 @@ By this approach, TS understands the following things:
 - It is a react function component.
 - It will have properties like propTypes and contextTypes.
 - It will received props of the type ChildProps.
-
+- It will also have children prop.
 
 
 ## Available Scripts
