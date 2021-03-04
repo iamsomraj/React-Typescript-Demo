@@ -6,6 +6,7 @@ import GuestList from "./state/GuestList";
 import UserSearch from "./state/UserSearch";
 import UserSearchCC from "./classes/UserSearchCC";
 import userProps from "./utils/userProps";
+import UserSearchRef from "./refs/UserSearchRef";
 
 const App = () => {
   return (
@@ -14,7 +15,8 @@ const App = () => {
       {/* <GuestList /> */}
       {/* <UserSearch /> */}
       {/* <EventComponent /> */}
-      <UserSearchCC users={userProps} />
+      {/* <UserSearchCC users={userProps} /> */}
+      <UserSearchRef />
     </div>
   );
 };
