@@ -2,6 +2,36 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Important Points 
+
+1. In TS, when we are using props, we have to use interface to define what props Child expects to receive. This gives us type check in both the components: Parent and Child.
+
+2. 1st Way to declare a function component: 
+
+```
+export const Child = ({ color }: ChildProps) => {
+  return <div>Favourite {color}!</div>;
+};
+```
+
+Downside of this approach: TS understands that this is a arrow function and it expects to receive arguements of type ChildProps. It also understands that this function returns some amount of JSX. IT DOES NOT UNDERSTAND THAT THIS IS A REACT COMPONENT.
+
+3. 2nd Way to declare a function component:
+
+```
+export const ChildAsFC: React.FC<ChildProps> = ({ color }) => {
+  return <div>This is {color}</div>;
+};
+```
+
+By this approach, TS understands the following things:
+
+- It is a react function component.
+- It will have properties like propTypes and contextTypes.
+- It will received props of the type ChildProps.
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
