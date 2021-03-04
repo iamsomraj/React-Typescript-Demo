@@ -1,1 +1,7 @@
-export const Child = () => <div>Hi there!</div>;
+interface ChildProps {
+  color: string;
+}
+
+export const Child = ({ color }: ChildProps) => {
+  return <div>Favourite {color}!</div>;
+};
